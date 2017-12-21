@@ -1,0 +1,67 @@
+.page-footer {
+  background-color: @dark-blue;
+  &__wrap {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media @phones, @tablets-portrait {
+      flex-direction: column;
+      padding-top: 35px;
+      padding-bottom: 35px;
+    }
+  }
+  &__copyright {
+    width: 30%;
+    color: @light-blue;
+    @media @phones {
+      width: 100%;
+      text-align: center;
+      margin-top: 10px;
+      order: 2;
+    }
+    @media @tablets-portrait {
+      width: 90%;
+      text-align: center;
+      margin-top: 10px;
+      order: 2;
+    }
+  }
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    width: 45%;
+    @media @phones {
+      width: 100%;
+      flex-direction: column;
+      text-align: center;
+      order: 1;
+    }
+    @media @tablets-portrait {
+      width: 65%;
+    }
+  }
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    @media @phones {
+      margin-bottom: 20px;
+    }
+  }
+  &__list-item {
+    margin-bottom: 10px;
+  }
+  &__list-link {
+    color: @light-blue;
+    &:hover {
+      color: @grey-blue;
+    }
+  }
+}

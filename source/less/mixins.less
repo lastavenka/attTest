@@ -1,0 +1,36 @@
+.list-to-flex {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.clearfix {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.hidden-text {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+// Content for screen readers only
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+@phones: ~"only screen and (max-width: 599px)";
+@tablets-portrait: ~"only screen and (min-width: 600px) and (max-width: 899px)";
+@tablets-landscape: ~"only screen and (min-width: 900px) and (max-width: 1199px)";
+@desktops: ~"only screen and (min-width: 1200px)";

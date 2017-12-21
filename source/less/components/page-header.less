@@ -1,0 +1,150 @@
+.page-header {
+  position: fixed;
+  background-color: @blue;
+  width: 100%;
+  top: 0;
+  &__wrap {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__logo {
+    img {
+      width: 75px;
+      height: 75px;
+    }
+  }
+  &__nav {
+    width: 40%;
+    transition: height 0.1s ease-out;
+    @media @phones {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      z-index: 100;
+      background-color: @blue;
+      width: 100%;
+      height: 150%;
+    }
+    @media @tablets-portrait {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        z-index: 100;
+        background-color: @blue;
+        width: 50%;
+        height: 150%;
+      }
+      @media @tablets-landscape {
+        width: 50%;
+      }
+    &--close {
+      @media @phones, @tablets-portrait {
+        .visually-hidden;
+      }
+    }
+  }
+  &__nav-list {
+    .list-to-flex;
+    @media @phones, @tablets-portrait {
+      flex-direction: column;
+      padding-bottom: 20px;
+    }
+  }
+  &__nav-item {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    @media @phones, @tablets-portrait {
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+  }
+  &__nav-link {
+    display: block;
+    text-align: center;
+    &:hover {
+      &::after {
+        width: 100%;
+      }
+    }
+    &::after {
+      content: '';
+      display: block;
+      bottom: 0;
+      width: 0;
+      border-bottom: 1px solid @black;
+      transition: width 0.2s ease-in;
+    }
+    &:hover {
+      &::after {
+        width: 100%;
+        @media @phones, @tablets-portrait {
+          width: 0;
+        }
+      }
+    }
+    &:active {
+      &::after {
+        @media @phones, @tablets-portrait {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+.hamburger {
+  width: 25px;
+  height: 18px;
+  position: relative;
+  display: none;
+  @media @phones, @tablets-portrait {
+    display: block;
+  }
+  &__line {
+    display: block;
+    background: @dark-blue;
+    width: 25px;
+    height: 2px;
+    position: absolute;
+    left: 0;
+    border-radius: 1px;
+    transition: all 0.2s;
+    &--1 {
+      top: 0;
+    }
+    &--2 {
+      top: 50%;
+    }
+    &--3 {
+      top: 100%;
+    }
+  }
+  &:hover,
+  &:focus {
+    .hamburger__line--1 {
+      transform: translateY(-1px);
+    }
+    .hamburger__line--3 {
+      transform: translateY(1px);
+    }
+  }
+  &.active {
+    .hamburger__line--1 {
+      transform: translateY(9px) translateX(0) rotate(45deg);
+    }
+    .hamburger__line--2 {
+      opacity: 0;
+    }
+    .hamburger__line--3 {
+      transform: translateY(-9px) translateX(0) rotate(-45deg);
+    }
+  }
+}

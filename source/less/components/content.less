@@ -1,0 +1,46 @@
+.content {
+    float: right;
+    background-color: @light-blue;
+    width: 75%;
+    @media @phones, @tablets-portrait {
+        width: 100%;
+        float: none;
+    }
+    &__wrap {
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 5%;
+        padding-right: 5%;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        max-width: 900px;
+        @media @phones, @tablets-portrait {
+            padding-left: 10%;
+            padding-right: 10%;
+        }
+    }
+    &__title {
+        .visually-hidden;
+    }
+    &__list {
+        list-style: none;
+        padding: 0;
+    }
+    &__item {
+        &:not(:first-child) {
+            margin-top: 40px;
+        }
+        &::after {
+            .clearfix;
+        }
+    }
+    &__item-img {
+        float: left;
+        margin-right: 15px;
+        margin-bottom: 5px;
+        @media @phones {
+            width: 100%;
+            float: none;
+        }
+    }
+}

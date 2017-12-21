@@ -1,0 +1,33 @@
+{
+  "name": "atttest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lastavenka/attTest.git"
+  },
+  "author": "Natallia Lastovenko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lastavenka/attTest/issues"
+  },
+  "homepage": "https://github.com/lastavenka/attTest#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-autoprefixer": "^3.0.4",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^2.2.1",
+    "grunt-contrib-less": "^1.4.1",
+    "grunt-contrib-uglify": "^3.2.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "load-grunt-tasks": "^3.5.2"
+  },
+  "dependencies": {
+    "animated-scroll-to": "^1.1.7"
+  }
+}
