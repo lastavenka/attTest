@@ -169,7 +169,6 @@ figure {
  * Address differences between Firefox and other browsers.
  */
 hr {
-  -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0;
 }
@@ -298,8 +297,6 @@ input[type="number"]::-webkit-outer-spin-button {
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
   /* 2 */
   box-sizing: content-box;
 }
@@ -357,8 +354,10 @@ th {
   padding: 0;
 }
 .list-to-flex {
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -387,6 +386,7 @@ html {
   font-size: 10px;
 }
 body {
+  position: relative;
   font-family: Open Sans, Arial, sans-serif;
   font-size: 1.6rem;
   line-height: 1.2;
@@ -417,13 +417,17 @@ a:focus {
   padding-top: 30px;
   padding-bottom: 20px;
   max-width: 1200px;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  -ms-flex-align: center;
+      align-items: center;
 }
 @media only screen and (max-width: 599px), only screen and (min-width: 600px) and (max-width: 899px) {
   .page-footer__wrap {
-    flex-direction: column;
+    -ms-flex-direction: column;
+        flex-direction: column;
     padding-top: 35px;
     padding-bottom: 35px;
   }
@@ -437,7 +441,8 @@ a:focus {
     width: 100%;
     text-align: center;
     margin-top: 10px;
-    order: 2;
+    -ms-flex-order: 2;
+        order: 2;
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 899px) {
@@ -445,20 +450,25 @@ a:focus {
     width: 90%;
     text-align: center;
     margin-top: 10px;
-    order: 2;
+    -ms-flex-order: 2;
+        order: 2;
   }
 }
 .page-footer__inner {
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
   width: 45%;
 }
 @media only screen and (max-width: 599px) {
   .page-footer__inner {
     width: 100%;
-    flex-direction: column;
+    -ms-flex-direction: column;
+        flex-direction: column;
     text-align: center;
-    order: 1;
+    -ms-flex-order: 1;
+        order: 1;
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 899px) {
@@ -490,6 +500,7 @@ a:focus {
   background-color: #a6b8da;
   width: 100%;
   top: 0;
+  z-index: 10;
 }
 .page-header__wrap {
   margin-left: auto;
@@ -499,9 +510,12 @@ a:focus {
   padding-top: 15px;
   padding-bottom: 15px;
   max-width: 1200px;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  -ms-flex-align: center;
+      align-items: center;
 }
 .page-header__logo img {
   width: 75px;
@@ -551,15 +565,18 @@ a:focus {
   }
 }
 .page-header__nav-list {
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 @media only screen and (max-width: 599px), only screen and (min-width: 600px) and (max-width: 899px) {
   .page-header__nav-list {
-    flex-direction: column;
+    -ms-flex-direction: column;
+        flex-direction: column;
     padding-bottom: 20px;
   }
 }
@@ -652,7 +669,7 @@ a:focus {
   background-color: #cfd3dc;
   width: 15%;
   padding-top: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 150px;
   padding-left: 5%;
   padding-right: 5%;
   position: fixed;
@@ -670,7 +687,10 @@ a:focus {
   padding-top: 20px;
   padding-bottom: 20px;
 }
-.menu__link:hover {
+.menu__link {
+  transition: font-weight 0.2s ease;
+}
+.menu__link--active {
   font-weight: bold;
 }
 .content {
